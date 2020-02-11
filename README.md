@@ -4,11 +4,11 @@
 
 # LSTM(Long Short Term Memory)
 
-![](/Users/youngjunyoon/Desktop/Github/WeeklyStudy002_RNN&LSTM/img015.gif)
+![img015](https://user-images.githubusercontent.com/60219074/74218234-fbe05f80-4cec-11ea-8cca-4a0cb2864733.gif)
 
-<img src="/Users/youngjunyoon/Desktop/Github/WeeklyStudy002_RNN&amp;LSTM/img013.png" style="zoom:200%;" />
+<img width="342" alt="img013" src="https://user-images.githubusercontent.com/60219074/74218230-faaf3280-4cec-11ea-9f37-950ae99df4bc.png">
 
-![](/Users/youngjunyoon/Desktop/Github/WeeklyStudy002_RNN&LSTM/img014.png)
+!<img width="659" alt="img014" src="https://user-images.githubusercontent.com/60219074/74218232-fb47c900-4cec-11ea-8531-c38341b98cd3.png">
 
 **LSTM(Long Short Term Memory)**는 RNN에서 Short-Term Memory문제점을 극복하고자 만들어진 층(Layer)이다. LSTM은 필요한 데이터와 불필요한 데이터를 구분하여 학습하여 학습의 효율을 올린다. 
 
@@ -16,11 +16,12 @@
 
 대표적인 예시를 통해 알아보자. 아래 그림은 시리얼에 대한 타노스의 리뷰이다.
 
-![](/Users/youngjunyoon/Desktop/Github/WeeklyStudy002_RNN&LSTM/img016.png)
+<img width="695" alt="img016" src="https://user-images.githubusercontent.com/60219074/74218236-fc78f600-4cec-11ea-8fd3-52878c5b3b8f.png">
 
 우리는 보통 물건을 사기위해 다른 사람이 작성한 리뷰를 통해 물건을 살지말지 결정하기도 한다. 리뷰를 읽어보고 긍정적인 말들이 있으면 사고 싶을 것이고 부정적인 말들이 있으면 사지 않을 것이다. 전부 읽어보니 대략 긍정적인 리뷰인 듯하다. 리뷰에서 우리의 구매욕을 자극하는 중요한 단어나 문장을 찾아보자. 
 
-![](/Users/youngjunyoon/Desktop/Github/WeeklyStudy002_RNN&LSTM/img017.gif)
+![img017](https://user-images.githubusercontent.com/60219074/74218238-fc78f600-4cec-11ea-8baa-9b7c346e9a05.gif)
+
 
 아마도 **“Amazing!”** / **“perfectly balanced breakfast”** / **will definitely be buying again!** 이 리뷰에서 가장 중요한 어구인 것을 쉽게 알 수 있다. 나머지 단어인 "this" / "gave" / "all" / "should" 등은 위의 어구에 비해 중요도가 떨어진다. 
 
@@ -36,11 +37,11 @@
 
 먼저 RNN의 데이터 처리과정을 간단하게 살펴보자.
 
-<img src="/Users/youngjunyoon/Desktop/Github/WeeklyStudy002_RNN&amp;LSTM/img019.gif" style="zoom:200%;" />
+![img019](https://user-images.githubusercontent.com/60219074/74218242-fdaa2300-4cec-11ea-8015-48bfedeb6046.gif)
 
 RNN은 단어 데이터들을 전부 컴퓨터가 읽을 수 있는 벡터(Vector)로 만들어주면 한 단어씩 처리를 한다. 데이터 처리가 이루어지는 동안 이전의 Hidden State는 다음 단계로 넘어간다. Hidden State는 neural networks memory(신경망 기억장치?)역할을 하는데 누적된 정보들을 가지고 있다. 
 
-<img src="/Users/youngjunyoon/Desktop/Github/WeeklyStudy002_RNN&amp;LSTM/img020.gif" style="zoom:200%;" />
+![img020](https://user-images.githubusercontent.com/60219074/74218244-fdaa2300-4cec-11ea-99cb-4c1d1ff3c027.gif)
 
 
 
@@ -48,7 +49,8 @@ RNN은 단어 데이터들을 전부 컴퓨터가 읽을 수 있는 벡터(Vecto
 
 처음에는 Input과 이전의 Hidden State가 결합한 벡터를 만든다. 새롭게 만들어진 벡터는 tahn 함수를 거쳐 새로운 Hidden State를 만들게 된다. 
 
-<img src="/Users/youngjunyoon/Desktop/Github/WeeklyStudy002_RNN&amp;LSTM/img021.gif" style="zoom:200%;" />
+![img021](https://user-images.githubusercontent.com/60219074/74218245-fe42b980-4cec-11ea-8f09-a38a977ecc40.gif)
+
 
 
 
@@ -60,25 +62,23 @@ RNN은 단어 데이터들을 전부 컴퓨터가 읽을 수 있는 벡터(Vecto
 
 ### Tahn Function
 
-<img src="/Users/youngjunyoon/Desktop/Github/WeeklyStudy002_RNN&amp;LSTM/img022.gif" style="zoom:200%;" />
+![img022](https://user-images.githubusercontent.com/60219074/74218246-fe42b980-4cec-11ea-8e3e-8910979e9279.gif)
 
 활성화 함수 종류 중 하나인 Tahn Function은 데이터의 값들이 거대해지는 것을 막기위해 항상 -1에서 1로 유지하는 역할을 한다. 무수히 많은 벡터 데이터들이 학습을 거치면서 많은 수학적인 연산을 거치게 된다. 만약에 매 과정마다 데이터가 3씩 곱해지는 연산을 하게 된다면 어떻게 될까? 그렇다면 데이터값이 겉잡을 수 없이 커지게 되어 처리 속도가 그만큼 느려지게 될 것이다. 
 
-![*3 그림넣기](/Users/youngjunyoon/Desktop/Github/WeeklyStudy002_RNN&LSTM/img023.gif)
+![img023](https://user-images.githubusercontent.com/60219074/74218248-fedb5000-4cec-11ea-9cfc-b4bc6f277d82.gif)
 
-![tahn함수 그림 넣기](/Users/youngjunyoon/Desktop/Github/WeeklyStudy002_RNN&LSTM/img024.gif)
-
-
+![img024](https://user-images.githubusercontent.com/60219074/74218249-ff73e680-4cec-11ea-8d53-c4db6b2c80c5.gif)
 
 
 
 ### LSTM
-
-<img src="/Users/youngjunyoon/Desktop/Github/WeeklyStudy002_RNN&amp;LSTM/img013.png" style="zoom:200%;" />
-
+<img width="342" alt="img013" src="https://user-images.githubusercontent.com/60219074/74218230-faaf3280-4cec-11ea-9f37-950ae99df4bc.png">
 
 
-<img src="/Users/youngjunyoon/Desktop/Github/WeeklyStudy002_RNN&amp;LSTM/img014.png" style="zoom:200%;" />
+
+
+<img width="659" alt="img014" src="https://user-images.githubusercontent.com/60219074/74218232-fb47c900-4cec-11ea-8531-c38341b98cd3.png">
 
 **Cell State** : 
 
